@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+          font-family: Arial, sans-serif;
+          background-color: #e6e6e6;
+          margin: 0;
+          padding: 0;
+        }
+    
+        header {
+          background-color: #a5cbd0;
+          color: white;
+          padding: 20px;
+          text-align: center;
+          display: flex;
+        }
+    
+        header a {
+          text-decoration: none;
+          color: white;
+          
+        }
+    
+        header img {
+          height: 40px;
+          vertical-align: middle;
+          margin-right: 10px;
+          align-items: center;
+          
+        }
+    
+        h2 {
+          margin: 10px 0 0 0;
+          margin-left: 40%;
+        }
+    
+        #coursesContainer {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          gap: 20px;
+          padding: 20px;
+        }
+    
+        .course {
+          background-color: #cee8f7;
+          border: 1px solid #ccc;
+          border-radius: 8px;
+          width: 260px;
+          padding: 20px;
+          text-align: center;
+          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+    
+        .course h3 {
+          margin: 10px 0;
+          color: #333;
+        }
+    
+        .course p {
+          margin: 5px 0;
+        }
+    
+        .course button {
+          margin-top: 10px;
+          padding: 10px 15px;
+          background-color: #123b74;
+          color: white;
+          border: none;
+          border-radius: 4px;
+          cursor: pointer;
+        }
+    
+        .course button:hover {
+          background-color: #5a9db9a7;
+        }
+      </style>
+</head>
+<body>
+
+    <header>
+        <a href="./index.html"><img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="logo"></a>
+        <h2>Available Courses</h2>
+    </header>
+<div id="coursesContainer"></div>
+
+<script src="./courses.js"></script>
+</body>
+</html>

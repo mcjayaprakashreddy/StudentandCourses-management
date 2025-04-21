@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home | Student Management System</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f8f9fa;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+
+    #register{
+      position: relative;
+    }
+    #register ol{
+      display: none;
+      list-style: none;
+      position: absolute;
+      padding: 0;
+      margin: 0;
+
+      z-index: 1000;
+    }
+
+    #register:hover ol{
+      display: block;
+    }
+
+    #loginbtn{
+      position: relative;
+    }
+
+    #loginbtn ol{
+      display: none;
+      list-style: none;
+      position: absolute;
+      padding: 0;
+      margin-right: 40px;
+
+      z-index: 1000;
+    }
+
+    #loginbtn:hover ol{
+    display: block;
+    }
+
+    header {
+      background: linear-gradient(90deg, #1684a0, #1abc9c);
+      color: white;
+      padding: 20px 30px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    header img {
+      width: 55px;
+      height: 55px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      padding: 0;
+      margin: 0;
+    }
+
+    nav ul li {
+      margin: 0 15px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 600;
+
+    }
+
+    nav ul li a:hover {
+      text-decoration: none;
+      border: 2px solid;
+      border-radius: 8px;
+      background-color: rgb(233, 255, 192);
+      padding: 5px;
+
+    }
+
+    /*carousel*/
+    .carousel-container {
+      max-width: 1650px;
+      margin: 40px auto;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+      background: white;
+    }
+
+    .carousel-inner img {
+      height: 600px;
+      object-fit: cover;
+    }
+
+ .carousel-caption-custom {
+  position: absolute;
+  bottom: 42%;
+  left: 8%;
+  background: linear-gradient(to right, rgba(30, 186, 210, 0.7), rgba(0, 0, 0, 0.702));
+  backdrop-filter: blur(4px);
+  padding: 25px 30px;
+  border-radius: 12px;
+  max-width: 600px;
+  color: #f1f1f1;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  animation: fadeInUp 1s ease-in-out;
+}
+
+.carousel-caption-custom h3 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: #fff;
+  letter-spacing: 1px;
+}
+
+.carousel-caption-custom p {
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: #d1bebe;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Animation */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .carousel-caption-custom {
+    bottom: 8%;
+    left: 5%;
+    padding: 20px;
+    max-width: 90%;
+  }
+
+  .carousel-caption-custom h3 {
+    font-size: 1.5rem;
+  }
+
+  .carousel-caption-custom p {
+    font-size: 1rem;
+  }
+}
+
+    .hero {
+      background: linear-gradient(to right, #76b6da, #34495e);
+      padding: 80px 0;
+      color: white;
+    }
+
+    .hero h1 {
+      font-size: 2.8rem;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      line-height: 1.7;
+    }
+
+    .hero-img {
+      max-width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    /*hero*/
+    .module-card {
+      background-color: #ffffff;
+      padding: 30px 20px;
+      border-radius: 16px;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      margin-bottom: 20px;
+    }
+
+    .module-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    }
+
+    .section-heading {
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin-bottom: 40px;
+      text-align: center;
+    }
+
+    .testimonial {
+      background-color: #ffffff;
+      border-radius: 16px;
+      padding: 30px 20px;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.07);
+      transition: transform 0.3s ease;
+    }
+
+    .testimonial:hover {
+      transform: translateY(-5px);
+    }
+
+    .testimonial p {
+      font-size: 15px;
+      color: #444;
+    }
+
+    .testimonial strong {
+      display: block;
+      margin-top: 15px;
+      font-size: 14px;
+      color: #1684a0;
+    }
+
+    /*footer*/
+    footer {
+      background-color: #111;
+      color: white;
+      padding: 60px;
+    }
+
+    footer h3, footer h2 {
+      margin-bottom: 20px;
+    }
+
+    footer a {
+      color: #ffffff;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 767px) {
+      .section {
+        padding: 40px 15px;
+      }
+      .section-heading {
+        font-size: 24px;
+      }
+      .testimonial {
+        margin-bottom: 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header>
+    <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="logo">
+    <nav>
+      <ul>
+        <li><a href="#">HOME</a></li>
+        <li><a href="./courses.html">COURSES</a></li>
+        <li id="profilebtn"><a href="./profile.html">PROFILE</a></li>
+        <li><a href="mycourses.html" style="float:right;">MY COURSES</a></li>
+        <!-- <li><a href="./register.html">Register</a></li>
+        <li id="logoutbtn"><a href="">Logout</a></li>
+        <li id="loginbtn"><a href="./login.html">Login</a></li> -->
+
+        <li id="register"><a href="">REGISTER</a>
+          <ol>
+            <li><a href="./register.html">STUDENT</a></li>
+            <li><a href="./adminregister.html">ADMIN</a></li>
+          </ol>
+        </li>
+
+        <li id="logoutbtn"><a href="">LOGOUT</a></li>
+        <li id="loginbtn"><a href="">LOGIN</a>
+          <ol>
+            <li><a href="./login.html">STUDENT</a></li>
+            <li><a href="./adminlogin.html">ADMIN</a></li>
+          </ol>
+        </li>
+        <!-- <li><a href="./adminregister.html">Admin Register</a></li>
+        <li id="adminloginbtn"><a href="./adminlogin.html">Admin Login</a></li>
+        <li id="adminlogoutbtn"><a href="">Admin Logout</a></li> -->
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Carousel -->
+  <div class="carousel-container">
+    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner">
+        
+        <div class="carousel-item active">
+          <img class="d-block w-100" src="https://media.istockphoto.com/id/635671226/photo/double-exposure-businessman-working-in-modern-office-with-modern-technology.jpg?s=612x612&w=0&k=20&c=2-LMFwh9krrNoOSpEffuys5u2BvBljWBbAq-nr-PtjE=" alt="Slide 1">
+          <div class="carousel-caption-custom">
+            <h3>Empowering Digital Learning</h3>
+            <p>Innovative solutions for modern education.</p>
+          </div>
+        </div>
+  
+        <div class="carousel-item">
+          <img class="d-block w-100" src="https://img.freepik.com/premium-photo/girls-using-laptops-rural-indian-classroom-styled-with-iban-art-showcase-integration_38013-9690.jpg" alt="Slide 2">
+          <div class="carousel-caption-custom">
+            <h3>Inclusive Education</h3>
+            <p>Connecting students everywhere with technology.</p>
+          </div>
+        </div>
+  
+        <div class="carousel-item">
+          <img class="d-block w-100" src="https://cdn.pixabay.com/photo/2021/08/19/10/18/businesswoman-6557677_640.jpg" alt="Slide 3">
+          <div class="carousel-caption-custom">
+            <h3>Efficient School Management</h3>
+            <p>Smarter administration at your fingertips.</p>
+          </div>
+        </div>
+  
+      </div>
+      <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+  </div>
+  
+  <!-- Hero Section -->
+  <section class="hero text-white" style="background-color: #1abc9c;">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-8">
+          <h1>All in One Web Based School Administration Software</h1>
+          <p>
+            School Administration Software offers one common school database system and configurable user profiles for everyone in your school.
+            It allows administration, teachers, students, and parents to share the information with each other.
+          </p>
+        </div>
+        <div class="col-md-4">
+          <img src="https://tse2.mm.bing.net/th?id=OIP.CtqFtM6gMILLD20TWwBDpQHaFY&pid=Api&P=0&h=300" alt="School Administration" class="img-fluid">
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+   <!-- Modules Overview Section -->
+   <section class="section bg-light mt-5">
+    <div class="container">
+      <h2 class="section-heading text-center mb-4">Modules Overview</h2>
+      <div class="row text-center">
+  
+        <div class="col-md-3">
+          <div class="module-card">
+            <h4>Admissions</h4>
+            <p>Streamline the student enrollment process.</p>
+          </div>
+        </div>
+  
+        <div class="col-md-3">
+          <div class="module-card">
+            <h4>Attendance</h4>
+            <p>Track and manage student attendance efficiently.</p>
+          </div>
+        </div>
+  
+        <div class="col-md-3">
+          <div class="module-card">
+            <h4>Examinations</h4>
+            <p>Organize and monitor exams and assessments.</p>
+          </div>
+        </div>
+  
+        <div class="col-md-3">
+          <div class="module-card">
+            <h4>Finance</h4>
+            <p>Manage school finances and fee collections.</p>
+          </div>
+        </div>
+  
+      </div>
+    </div>
+  </section>
+  
+  <!-- Testimonials Section -->
+  <section class="section mt-4">
+    <div class="container">
+      <h2 class="section-heading">What Our Clients Say</h2>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="testimonial">
+            <p>"This system has revolutionized the way we manage our school operations."</p>
+            <p><strong>- Principal, ABC High School</strong></p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="testimonial">
+            <p>"The mobile accessibility allows our staff to stay connected and informed at all times."</p>
+            <p><strong>- Administrator, XYZ Academy</strong></p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="testimonial">
+            <p>"We've seen a significant improvement in efficiency since implementing this software."</p>
+            <p><strong>- Director, LMN Institute</strong></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="mt-5">
+    <div class="row" style="padding-left: 6%;">
+      <!-- Quick Links -->
+      <div class="col-md-2">
+        <h3 style="color: #f1c40f;">Quick Links</h3>
+        <p>Blog</p>
+        <p>F A Q</p>
+        <p>Demo</p>
+        <p>Change Log</p>
+        <p>Privacy Policy</p>
+        <p>Terms Of Service</p>
+      </div>
+
+      <!-- About -->
+      <div class="col-md-6">
+        <h2 style="color: #f1c40f;">Scholars</h2>
+        <p>
+          Student management is management software for schools. It helps in learning, testing and administration activities.
+          It manages all elements of school information systems including students, courses, exams, teachers, and employees.
+        </p>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="col-md-3">
+        <h3 style="color: #f1c40f;">Contact Info</h3>
+        <p>📞 WhatsApp: +44 7541 586024</p>
+        <p>📧 Email: <a href="mailto:prakash@scholars.com">prakash@scholars.com</a></p>
+        <div class="mt-3">
+          <a href="#">🌐 Facebook</a><br>
+          <a href="#">🔗 LinkedIn</a><br>
+          <a href="#">📺 YouTube</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"></script>
+  <script src="./index.js"></script>
+</body>
+</html>

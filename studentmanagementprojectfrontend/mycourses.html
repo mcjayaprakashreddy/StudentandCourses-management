@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Courses</title>
+  <style>/* Reset some default spacing */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      
+      body {
+        font-family: 'Poppins', sans-serif;
+        background-color: #f4f6f8;
+      }
+      
+      /* Header Styling */
+      header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px 40px;
+        background: linear-gradient(135deg, #534dbd, #b7a1a1); /* Indigo to Blue */
+        color: #ffffff;
+        box-shadow: 0 4px 10px rgba(194, 119, 119, 0.1);
+      }
+      
+      /* Logo */
+      header a img {
+        height: 50px;
+        width: auto;
+        transition: transform 0.3s ease;
+      }
+      
+      header a:hover img {
+        transform: scale(1.1);
+      }
+      
+      /* Title */
+      header h1 {
+        flex-grow: 1;
+        text-align: center;
+        font-size: 2rem;
+        font-weight: 600;
+        letter-spacing: 1px;
+      }
+      
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        header {
+          flex-direction: column;
+          gap: 10px;
+          text-align: center;
+          padding: 20px;
+        }
+      
+        header h1 {
+          font-size: 1.5rem;
+        }
+      }
+      
+      #courses {
+        display: flex;
+        padding: 30px;
+        background-color: #d0d9e8;
+        gap: 30px;
+       flex-wrap: wrap;
+      }
+      
+      #course {
+        background-color: #5d8fd087;
+        border-radius: 16px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        padding: 24px 32px;
+        margin: 20px 0;
+        width: 300px;
+        transition: transform 0.2s ease-in-out;
+      }
+      
+      #course:hover {
+        transform: scale(1.02);
+      }
+      
+      #course h3 {
+        font-size: 1rem;
+        color: #777;
+        margin-bottom: 8px;
+      }
+      
+      #course h1 {
+        font-size: 1.5rem;
+        color: #333;
+        margin-bottom: 12px;
+      }
+      
+      #course p {
+        font-size: 1rem;
+        color: #555;
+        margin: 6px 0;
+      }
+      
+      #deleteCoures {
+        margin-top: 16px;
+        padding: 10px 20px;
+        background-color: #e63946;
+        color: #ffffff;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      #deleteCoures:hover {
+        background-color: #d62828;
+      }
+  </style>
+</head>
+<body>
+    <header>
+        <a href="./index.html" ><img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="img"></a>
+        <h1>My Courses</h1>
+    </header>
+    <div id="courses">
+    </div>
+
+  <script src="./mycourses.js"></script>
+</body>
+</html>
