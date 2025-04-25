@@ -11,8 +11,8 @@ form.addEventListener("submit",async (e)=>{
     let number=inputs[3].value
     let password=inputs[4].value
     let address=inputs[5].value
-    let img=inputs[6].value
-    console.log(fname,lname,email,number,password,address,img);
+    // let img=inputs[6].value
+    console.log(fname,lname,email,number,password,address);
 
 
     let student={
@@ -21,8 +21,8 @@ form.addEventListener("submit",async (e)=>{
         email : email,
         mobileNumber : number,
         password : password,
-        address : address,
-        img:img
+        address : address
+        // img:img
     }
   
     let x=await fetch("http://localhost:8080/savestudent",{

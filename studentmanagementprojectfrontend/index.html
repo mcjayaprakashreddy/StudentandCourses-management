@@ -31,11 +31,11 @@
       display: block;
     }
 
-    #loginbtn{
+    #login{
       position: relative;
     }
 
-    #loginbtn ol{
+    #login ol{
       display: none;
       list-style: none;
       position: absolute;
@@ -45,7 +45,25 @@
       z-index: 1000;
     }
 
-    #loginbtn:hover ol{
+    #login:hover ol{
+    display: block;
+    }
+
+    #logout{
+      position: relative;
+    }
+
+    #logout ol{
+      display: none;
+      list-style: none;
+      position: absolute;
+      padding: 0;
+      margin-right: 40px;
+
+      z-index: 1000;
+    }
+
+    #logout:hover ol{
     display: block;
     }
 
@@ -291,11 +309,18 @@
           </ol>
         </li>
 
-        <li id="logoutbtn"><a href="">LOGOUT</a></li>
-        <li id="loginbtn"><a href="">LOGIN</a>
+        
+        <li id="login"><a href="">LOGIN</a>
           <ol>
-            <li><a href="./login.html">STUDENT</a></li>
-            <li><a href="./adminlogin.html">ADMIN</a></li>
+            <li id="loginbtn"><a href="./login.html">STUDENT</a></li>
+            <li id="adminloginbtn"><a href="./adminlogin.html">ADMIN</a></li>
+            
+          </ol>
+        </li>
+        <li id="logout"><a href="">LOGOUT</a>
+          <ol>
+            <li id="adminlogoutbtn"><a href="">Admin</a></li>
+            <li id="logoutbtn"><a href="">Student</a></li>
           </ol>
         </li>
         <!-- <li><a href="./adminregister.html">Admin Register</a></li>
